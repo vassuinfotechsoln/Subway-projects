@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssetsPro — Modern Enterprise Inventory Management</title>
+
+    <!-- Meta SEO -->
+    <meta
+      name="description"
+      content="Manage and audit corporate hardware and software assets with ease. Powered by AssetsPro's premium AI-driven dashboard."
+    />
+    <meta name="author" content="Subway Projects — Advanced Agentic Coding" />
+
+    <!-- Google Fonts: Outfit (Brand) & Inter (UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Performance: Inline Anti-FOUC for Dark Mode -->
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        if (
+          theme === "dark" ||
+          (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body
+    class="selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black"
+  >
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

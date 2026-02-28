@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --tooltip-bg: #000000;
+    --tooltip-text: #ffffff;
+    --tooltip-border: #333333;
+    --brand-primary: #000000;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+    --tooltip-bg: #ffffff;
+    --tooltip-text: #000000;
+    --tooltip-border: #e2e8f0;
+    --brand-primary: #ffffff;
+  }
+
+  body {
+    @apply antialiased text-slate-900 bg-white dark:bg-black dark:text-white transition-colors duration-300 font-sans;
+    accent-color: var(--brand-primary);
+    background-image:
+      radial-gradient(at 0% 0%, rgba(0, 0, 0, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(0, 0, 0, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight font-bold;
+  }
+
+  select option {
+    @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl border border-white/40 dark:border-slate-800/50 rounded-[2rem] shadow-premium transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply hover:shadow-premium-hover hover:-translate-y-1 hover:bg-white/90 dark:hover:bg-slate-900/60;
+  }
+
+  .premium-button-primary {
+    @apply px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-xl font-bold hover:opacity-90 transition-all shadow-lg shadow-black/20 dark:shadow-white/10 active:scale-95 duration-200 flex items-center gap-2;
+  }
+
+  .premium-button-secondary {
+    @apply px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all shadow-sm active:scale-95 duration-200 flex items-center gap-2;
+  }
+
+  .premium-input {
+    @apply w-full bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 focus:border-black dark:focus:border-white rounded-2xl px-4 py-3 outline-none transition-all shadow-sm focus:ring-4 focus:ring-black/10 dark:focus:ring-white/10;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full border-2 border-transparent bg-clip-padding;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-300 dark:bg-slate-700;
+}
+
+.fade-in {
+  @apply animate-fade-in-up;
+}
